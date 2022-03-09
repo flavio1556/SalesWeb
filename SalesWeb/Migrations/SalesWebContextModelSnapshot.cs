@@ -49,7 +49,7 @@ namespace SalesWeb.Migrations
                     b.ToTable("SalesRecord");
                 });
 
-            modelBuilder.Entity("SalesWeb.Models.Saller", b =>
+            modelBuilder.Entity("SalesWeb.Models.Seller", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -68,17 +68,17 @@ namespace SalesWeb.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Saller");
+                    b.ToTable("Seller");
                 });
 
             modelBuilder.Entity("SalesWeb.Models.SalesRecord", b =>
                 {
-                    b.HasOne("SalesWeb.Models.Saller", "Saller")
+                    b.HasOne("SalesWeb.Models.Seller", "Saller")
                         .WithMany("Sales")
                         .HasForeignKey("SallerId");
                 });
 
-            modelBuilder.Entity("SalesWeb.Models.Saller", b =>
+            modelBuilder.Entity("SalesWeb.Models.Seller", b =>
                 {
                     b.HasOne("SalesWeb.Models.Department", "Department")
                         .WithMany("Sallers")

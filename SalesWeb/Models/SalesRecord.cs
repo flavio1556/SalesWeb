@@ -7,13 +7,13 @@ namespace SalesWeb.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public double Amount { get; set; }
-        public SalesStatus Status { get; set; }
-        public Saller Saller { get; set; }
+        public SaleStatus Status { get; set; }
+        public Seller Saller { get; set; }
 
         public SalesRecord()
         {
         }
-        public SalesRecord(int id, DateTime date, double amount, SalesStatus status, Saller saller)
+        public SalesRecord(int id, DateTime date, double amount, SaleStatus status, Seller saller)
         {
             this.Id = id;
             this.Date = date;   
