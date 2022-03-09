@@ -9,7 +9,7 @@ namespace SalesWeb.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Saller",
+                name: "Seller",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -22,9 +22,9 @@ namespace SalesWeb.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Saller", x => x.Id);
+                    table.PrimaryKey("PK_Seller", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Saller_Department_DepartmentId",
+                        name: "FK_Seller_Department_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Department",
                         principalColumn: "Id",
@@ -46,9 +46,9 @@ namespace SalesWeb.Migrations
                 {
                     table.PrimaryKey("PK_SalesRecord", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SalesRecord_Saller_SallerId",
+                        name: "FK_SalesRecord_Seller_SallerId",
                         column: x => x.SallerId,
-                        principalTable: "Saller",
+                        principalTable: "Seller",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -59,8 +59,8 @@ namespace SalesWeb.Migrations
                 column: "SallerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Saller_DepartmentId",
-                table: "Saller",
+                name: "IX_Seller_DepartmentId",
+                table: "Seller",
                 column: "DepartmentId");
         }
 
@@ -70,7 +70,7 @@ namespace SalesWeb.Migrations
                 name: "SalesRecord");
 
             migrationBuilder.DropTable(
-                name: "Saller");
+                name: "Seller");
         }
     }
 }
